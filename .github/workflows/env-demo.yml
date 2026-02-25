@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: connecting to env variable
+        env:
+          APP_ENV: "deploy"
         run: echo "App is connecting to $APP_ENV"
 
 
