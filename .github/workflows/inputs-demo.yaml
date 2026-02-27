@@ -1,8 +1,9 @@
 name: Inputs demo
-on: 
-  workflow_dispatch: 
+
+on:
+  workflow_dispatch:
     inputs:
-      environment: 
+      environment:
         description: choose the env to deploy
         required: true
         default: dev
@@ -11,14 +12,15 @@ on:
           - dev
           - test
           - prod
-     artifact-tag:
-      description: choose the git tag to deploy
-      required: true
-      type: string
-    
+
+      tag:
+        description: choose the git tag to deploy
+        required: true
+        type: string
+
 jobs:
-    inputs-demo:
-      runs-on: ubuntu-latest
-      steps:
-        - name: deploy the app
-          run: echo " Deploying the ${{ inputs.artifact-tag }} application to ${{inputs.environment}}"
+  inputs-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy the app
+        run: echo "Deploying ${{ inputs.tag }} to ${{ inputs.environment }}"
