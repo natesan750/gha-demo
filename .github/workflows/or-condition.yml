@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run for natesan or gowcy
-        if: github.actor == 'Natesh' || github.actor == 'Gowcy'
+        if: ${{ or(github.actor == 'Natesh', github.actor == 'Gowcy') }}
         run: echo "It is triggered by either Natesh or Gowcy"
   
