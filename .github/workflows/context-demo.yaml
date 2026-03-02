@@ -14,4 +14,4 @@ jobs:
         run: echo "${{ toJson(github) }}"
 
       - name: Print env variables
-        run: Printenv
+        run: printenv
