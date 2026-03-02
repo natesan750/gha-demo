@@ -4,7 +4,9 @@ jobs:
   demo:
     runs-on: ubuntu-latest
     steps:
+      - name: Debug actor
+        run: echo "Actor is ${{ github.actor }}"
+        
       - name: Run for natesan or gowcy
-        if: ${{ (github.actor == 'Natesh'|| github.actor == 'Gowcy') }} 
+        if: ${{ github.actor == 'Natesh' || github.actor == 'Gowcy' }}
         run: echo "It is triggered by either Natesh or Gowcy"
-  
